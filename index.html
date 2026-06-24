@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Human Resources - LaGuardia Community College</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Overpass:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── CSS VARIABLES (from source) ─── */
+    :root {
+      --primary:    #C4262E;
+      --primary-hover: #DB343D;
+      --text:       #000000;
+      --grey-light: #F2F2F2;
+      --grey-mid:   #CCCCCC;
+      --white:      #FFFFFF;
+      --link-blue:  #2A7AB0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      color: var(--text);
+      background: #fff;
+      line-height: 24px;
+    }
+    a { text-decoration: none; color: var(--primary); font-family: "Roboto", sans-serif; font-size: 16px; }
+    a:hover { color: var(--primary-hover); }
+    p { margin-bottom: 12px; }
+
+    /* Page-wide centering wrapper */
+    .page-wrap {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    /* Gray banner — title only */
+    .page-banner {
+      padding: 28px 24px 36px;
+    }
+    .page-banner h1 {
+      font-family: "Overpass", sans-serif;
+      font-size: 48px;
+      font-weight: 400;
+      color: var(--primary);
+      line-height: 56px;
+    }
+
+    /* ══════════════════════════════════════════
+       TOP UTILITY BAR
+    ══════════════════════════════════════════ */
+    .top-bar {
+      background: var(--primary);
+      min-height: 40px;
+    }
+    .top-bar-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      min-height: 40px;
+    }
+    .top-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+    /* Social icons */
+    .top-social {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      margin-right: 16px;
+    }
+    .top-social a {
+      color: #fff;
+      width: 28px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px;
+    }
+    .top-social a:hover { color: #FED501; }
+
+    /* "Make this website talk" — left side, after social */
+    .top-talk button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .top-talk button:hover { color: #FED501; }
+
+    /* Right utility links */
+    .top-right {
+      display: flex;
+      align-items: center;
+      list-style: none;
+    }
+    .top-right > li { position: relative; }
+    .top-right > li > a {
+      color: #fff;
+      font-size: 14px;
+      font-family: "Roboto", sans-serif;
+      padding: 0 12px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+    }
+    .top-right > li > a:hover { color: #FED501; }
+    .top-caret {
+      display: inline-block; width: 0; height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid #fff;
+      vertical-align: middle;
+    }
+    /* Search button */
+    .top-search {
+      background: none; border: none; cursor: pointer;
+      color: #fff; height: 40px; padding: 0 10px;
+      display: flex; align-items: center; font-size: 16px;
+    }
+    .top-search:hover { color: #FED501; }
+
+    /* Login dropdown */
+    .top-right .login-menu {
+      display: none;
+      position: absolute; top: 40px; right: 0;
+      background: #fff;
+      border-top: 3px solid var(--primary);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      min-width: 210px;
+      z-index: 9999;
+      list-style: none;
+    }
+    .top-right li:hover .login-menu { display: block; }
+    .top-right .login-menu li a {
+      display: block;
+      padding: 9px 16px;
+      font-size: 14px;
+      color: #333;
+      border-bottom: 1px solid #eee;
+      height: auto;
+    }
+    .top-right .login-menu li a:hover { background: var(--grey-light); color: var(--primary); }
+
+    /* ══════════════════════════════════════════
+       MAIN HEADER
+    ══════════════════════════════════════════ */
+    .main-header {
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+      width: 100%;
+    }
+    .main-header-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 100px;
+    }
+    .site-logo img { width: 167px; height: auto; display: block; }
+
+    /* Main Nav */
+    .main-nav { display: flex; list-style: none; height: 100px; }
+    .main-nav > li { position: relative; display: flex; }
+    .main-nav > li > a {
+      display: flex; align-items: center; gap: 6px;
+      padding: 0 16px;
+      font-size: 15px;
+      font-weight: 400;
+      color: #222;
+      white-space: nowrap;
+      font-family: "Roboto", sans-serif;
+      border-bottom: 3px solid transparent;
+    }
+    .main-nav > li:hover > a { color: var(--primary); border-bottom-color: var(--primary); }
+    .nav-caret {
+      display: inline-block; width: 0; height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid #aaa;
+    }
+    .main-nav > li:hover .nav-caret { border-top-color: var(--primary); }
+    .main-nav .submenu {
+      display: none;
+      position: absolute; top: 100px; left: 0;
+      background: #fff;
+      border-top: 3px solid var(--primary);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      min-width: 235px;
+      z-index: 9999;
+      list-style: none;
+    }
+    .main-nav > li:hover .submenu { display: block; }
+    .main-nav .submenu li a {
+      display: block;
+      padding: 11px 18px;
+      font-size: 14px;
+      color: #333;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .main-nav .submenu li a:hover { color: var(--primary); background: var(--grey-light); }
+
+    .breadcrumb-wrap {
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .breadcrumb-wrap a { color: var(--primary); font-size: 14px; font-weight: 400; }
+    .breadcrumb-wrap a:hover { text-decoration: underline; }
+    .breadcrumb-wrap .sep { margin: 0 5px; color: #333; font-weight: 400; }
+
+    .page-title-section { padding: 0; background: transparent; }
+    .page-title-section h1 {
+      font-family: "Overpass", sans-serif;
+      font-size: 48px;
+      font-weight: 400;
+      color: var(--primary);
+      line-height: 56px;
+    }
+
+    /* ══════════════════════════════════════════
+       PAGE BODY LAYOUT
+    ══════════════════════════════════════════ */
+    .page-body {
+      padding: 36px 24px 60px;
+      display: flex;
+      gap: 48px;
+      align-items: flex-start;
+    }
+
+    /* ══════════════════════════════════════════
+       SIDEBAR
+    ══════════════════════════════════════════ */
+    .sidebar { width: 380px; flex-shrink: 0; }
+
+    /* Contact Us box */
+    .sidebar-contact { margin-bottom: 28px; }
+    .sidebar-contact h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 12px;
+      font-family: "Roboto", sans-serif;
+    }
+    .sidebar-contact p { font-size: 16px; color: #333; line-height: 1.7; margin-bottom: 2px; }
+    .sidebar-contact strong { font-weight: 700; }
+
+    /* Section Nav — vertical, e--pointer-background e--animation-sweep-right */
+    .sidebar-nav {
+      list-style: none;
+      border-top: 2px solid var(--grey-light);
+      border-bottom: 2px solid var(--grey-light);
+      margin-bottom: 32px;
+      padding: 8px 0;
+    }
+    .sidebar-nav > li { position: relative; margin-bottom: 2px; }
+    .sidebar-nav > li > a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      font-size: 16px;
+      color: var(--text);
+      font-family: "Roboto", sans-serif;
+      position: relative;
+      overflow: hidden;
+      transition: color 0.3s;
+    }
+    .sidebar-nav > li > a::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--grey-light);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 0;
+    }
+    .sidebar-nav > li > a:hover::before,
+    .sidebar-nav > li.active > a::before { transform: translateX(0); }
+    .sidebar-nav > li > a:hover,
+    .sidebar-nav > li.active > a { color: var(--primary); }
+    .sidebar-nav > li > a span { position: relative; z-index: 1; }
+    .sidebar-nav > li > a .sub-chevron {
+      position: relative; z-index: 1;
+      font-size: 13px; color: #888;
+    }
+
+    /* Sub-nav (Time and Leave) — flyout to the right */
+    .sidebar-sub {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-top: 3px solid var(--grey-light);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      min-width: 180px;
+      z-index: 999;
+      list-style: none;
+    }
+    .sidebar-nav li:hover > .sidebar-sub,
+    .sidebar-nav li.sub-open > .sidebar-sub { display: block; }
+    .sidebar-sub li { border-bottom: 1px solid #f0f0f0; }
+    .sidebar-sub li:last-child { border-bottom: none; }
+    .sidebar-sub li a {
+      display: block;
+      padding: 14px 20px;
+      font-size: 15px;
+      color: #333;
+      font-family: "Roboto", sans-serif;
+      background: #fff;
+      white-space: nowrap;
+    }
+    .sidebar-sub li a:hover { color: var(--primary); background: var(--grey-light); }
+
+    /* PDF badge */
+    .pdf-badge {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      font-size: 9px;
+      font-weight: 700;
+      padding: 1px 3px;
+      border-radius: 2px;
+      margin-left: 3px;
+      line-height: 1.5;
+      vertical-align: middle;
+      font-family: Arial, sans-serif;
+    }
+
+    /* ══════════════════════════════════════════
+       MAIN CONTENT
+    ══════════════════════════════════════════ */
+    .main-content { flex: 1; min-width: 0; }
+
+    /* Welcome section */
+    .welcome-section { margin-bottom: 32px; }
+    .welcome-section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 18px;
+      font-family: "Roboto", sans-serif;
+    }
+    .welcome-section p {
+      font-size: 16px;
+      line-height: 24px;
+      color: #333;
+      margin-bottom: 14px;
+    }
+
+    
+
+    /* ══════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════ */
+    .site-footer {
+      background: var(--grey-light);
+      border-top: 1px solid #ddd;
+      padding: 0;
+    }
+    .footer-inner-wrap {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 48px 24px 24px;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 2fr 1.2fr 1fr;
+      gap: 60px;
+      margin-bottom: 36px;
+    }
+    .footer-col-heading {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      font-family: "Roboto", sans-serif;
+    }
+
+    /* Icon list (contact) */
+    .f-icon-list { list-style: none; }
+    .f-icon-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 16px;
+      font-size: 15px;
+      color: #333;
+      line-height: 1.6;
+    }
+    .f-icon-list .f-icon {
+      color: var(--primary);
+      font-size: 16px;
+      margin-top: 2px;
+      flex-shrink: 0;
+      width: 16px;
+      text-align: center;
+    }
+    .f-icon-list a { color: var(--primary); font-size: 15px; }
+    .f-icon-list a:hover { text-decoration: underline; }
+    .f-map-link { margin-top: 4px; padding-left: 30px; }
+    .f-map-link a { color: var(--primary); font-size: 15px; }
+    .f-map-link a:hover { text-decoration: underline; }
+
+    /* Quicklinks */
+    .f-links { list-style: none; }
+    .f-links li { margin-bottom: 10px; }
+    .f-links li a { font-size: 15px; color: #333; font-family: "Roboto", sans-serif; }
+    .f-links li a:hover { color: var(--primary); text-decoration: underline; }
+
+    /* Social icons — plain red, no background box */
+    .f-social {
+      display: grid;
+      grid-template-columns: repeat(3, 42px);
+      gap: 10px;
+    }
+    .f-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px; height: 42px;
+      color: var(--primary);
+      font-size: 22px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background: #fff;
+    }
+    .f-social a:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    /* Footer bottom bar */
+    .footer-bottom {
+      border-top: 1px solid #ddd;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p { font-size: 13px; color: #666; }
+    .footer-bottom-links { list-style: none; display: flex; flex-wrap: wrap; gap: 18px; }
+    .footer-bottom-links li a { font-size: 13px; color: #666; }
+    .footer-bottom-links li a:hover { color: var(--primary); }
+    .footer-cuny img { height: 26px; opacity: 0.6; }
+    /* ═══════════════════════════════════════════════
+       HOME CONTENT SECTIONS
+       All prefixed hc- to avoid conflicts with template
+    ═══════════════════════════════════════════════ */
+
+    /* Shared section wrapper */
+    .hc-section {
+      padding: 40px 0;
+      border-top: 1px solid #ebebeb;
+    }
+    .hc-section--gray {
+      background: var(--grey-light);  
+      margin: 0 -24px;
+      padding: 40px 24px;
+    }
+    .hc-section__title {
+      font-family: "Roboto", sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 24px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--primary);
+      display: inline-block;
+    }
+
+         /* ── STAFF SPOTLIGHT ── */
+    .hc-spotlight {
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+    }
+    .hc-spotlight__photo img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .hc-spotlight__body { flex: 1; }
+    .hc-spotlight__quote {
+      font-size: 16px;
+      font-style: italic;
+      color: #444;
+      line-height: 1.65;
+      border-left: 3px solid var(--primary);
+      padding-left: 16px;
+      margin-bottom: 16px;
+    }
+    .hc-spotlight__name { font-weight: 700; font-size: 15px; margin-bottom: 2px; }
+    .hc-spotlight__title { font-size: 14px; color: var(--primary); margin-bottom: 10px; }
+    .hc-spotlight__bio { font-size: 14px; color: #555; line-height: 1.6; margin: 0; }
+
+     /* ── GALLERY ── */
+    .hc-gallery { display: flex; gap: 12px; align-items: stretch; }
+    .hc-gallery__item { margin: 0; position: relative; overflow: hidden; }
+    .hc-gallery__item img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+    .hc-gallery__item:hover img { transform: scale(1.03); }
+    .hc-gallery__item--wide { flex: 0 0 60%; }
+    .hc-gallery__stack { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+    .hc-gallery__stack .hc-gallery__item { flex: 1; }
+    figcaption { font-size: 12px; color: #666; padding: 6px 2px 0; }
+    
+    /* ── NEWS CARDS ── */
+  .hc-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .hc-card {
+      border: 1px solid #e5e5e5;
+      padding: 20px;
+      border-top: 3px solid var(--primary);
+    }
+    .hc-card__date {
+      font-size: 12px;
+      color: #888;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .hc-card__tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .hc-card__title {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+    .hc-card__title a { color: var(--text); font-size: 15px; }
+    .hc-card__title a:hover { color: var(--primary); }
+    .hc-card__excerpt { font-size: 14px; color: #555; line-height: 1.6; margin: 0; }
+
+
+        /* ── EVENTS ── */
+    .hc-events { display: flex; flex-direction: column; gap: 1px; }
+    .hc-event {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 16px 0;
+      border-bottom: 1px solid #ebebeb;
+      color: var(--text);
+    }
+    .hc-event:hover .hc-event__title { color: var(--primary); }
+    .hc-event__date {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary);
+      color: #fff;
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
+      border-radius: 2px;
+      text-align: center;
+    }
+    .hc-event__month { font-size: 10px; font-weight: 700; letter-spacing: 1px; line-height: 1; }
+    .hc-event__day { font-size: 22px; font-weight: 700; line-height: 1.1; }
+    .hc-event__title { font-size: 15px; font-weight: 500; margin-bottom: 4px; transition: color 0.2s; }
+    .hc-event__meta { font-size: 13px; color: #777; margin: 0; }
+
+
+    /* ── QUICK LINKS ── */
+    .hc-ql-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .hc-ql-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #fff;
+      padding: 16px 18px;
+      border: 1px solid #e5e5e5;
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 500;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .hc-ql-item svg { color: var(--primary); flex-shrink: 0; }
+    .hc-ql-item:hover { border-color: var(--primary); color: var(--primary); }
+
+    
+
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     TOP UTILITY BAR
+══════════════════════════════════════════ -->
+<div class="top-bar">
+ <div class="top-bar-inner">
+
+  <!-- LEFT: Social icons + Make this website talk -->
+  <div class="top-bar-left">
+    <div class="top-social">
+      <!-- Facebook -->
+      <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+      <!-- Instagram -->
+      <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><circle cx="17.5" cy="6.5" r="0.5" fill="#fff"/></svg></a>
+      <!-- X / Twitter -->
+      <a href="#" aria-label="X"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <!-- YouTube -->
+      <a href="#" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#C4262E"/></svg></a>
+      <!-- LinkedIn -->
+      <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+      <!-- Flickr -->
+      <a href="#" aria-label="Flickr"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><circle cx="7" cy="12" r="4"/><circle cx="17" cy="12" r="4"/></svg></a>
+    </div>
+    <div class="top-talk">
+      <button type="button">Make this website talk</button>
+    </div>
+  </div>
+
+  <!-- RIGHT: Login, Library, Make a Gift, Directory, Search -->
+  <ul class="top-right">
+    <li>
+      <a href="#">Login <span class="top-caret"></span></a>
+      <ul class="login-menu">
+        <li><a href="#">Navigate – Students</a></li>
+        <li><a href="#">Navigate – Staff &amp; Faculty</a></li>
+        <li><a href="#">Student Email</a></li>
+        <li><a href="#">Faculty/Staff Portal</a></li>
+        <li><a href="#">Faculty/Staff Email</a></li>
+        <li><a href="#">CUNY first</a></li>
+        <li><a href="#">Brightspace</a></li>
+        <li><a href="#">ePortfolio</a></li>
+        <li><a href="#">DegreeWorks</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Library</a></li>
+    <li><a href="#">Make a Gift</a></li>
+    <li><a href="#">Directory</a></li>
+    <li>
+      <button class="top-search" aria-label="Search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+    </li>
+  </ul>
+
+ </div><!-- /top-bar-inner -->
+</div>
+
+<!-- ══════════════════════════════════════════
+     MAIN HEADER
+══════════════════════════════════════════ -->
+<header class="main-header">
+  <div class="main-header-inner">
+    <a href="#">
+      <img class="site-logo" src="data:image/png;base64,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" alt="LaGuardia Community College" style="height:60px;">
+    </a>
+    <nav>
+      <ul class="main-nav">
+        <li>
+          <a href="#">Admissions <span class="nav-caret"></span></a>
+          <ul class="submenu">
+            <li><a href="#">Apply Now</a></li>
+            <li><a href="#">Discover LaGuardia</a></li>
+            <li><a href="#">International Applicants</a></li>
+            <li><a href="#">Adult Learner</a></li>
+            <li><a href="#">Non-Degree Students</a></li>
+            <li><a href="#">Visit LaGuardia</a></li>
+            <li><a href="#">After You've Applied</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Academics <span class="nav-caret"></span></a>
+          <ul class="submenu">
+            <li><a href="#">Academic Affairs</a></li>
+            <li><a href="#">Academic Calendar</a></li>
+            <li><a href="#">Majors</a></li>
+            <li><a href="#">Degree Maps</a></li>
+            <li><a href="#">College Catalog</a></li>
+            <li><a href="#">Advising</a></li>
+            <li><a href="#">Transfer Resources</a></li>
+            <li><a href="#">Tutoring</a></li>
+            <li><a href="#">Register for Classes</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Paying for College <span class="nav-caret"></span></a>
+          <ul class="submenu">
+            <li><a href="#">Student Financial Services</a></li>
+            <li><a href="#">Tuition and Fees</a></li>
+            <li><a href="#">Foundation Student Support</a></li>
+            <li><a href="#">Federal Financial Aid (FAFSA)</a></li>
+            <li><a href="#">NYS Tuition Assistance Program</a></li>
+            <li><a href="#">NYS Excelsior Scholarship</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Continuing Education <span class="nav-caret"></span></a>
+          <ul class="submenu">
+            <li><a href="#">Explore Our Services</a></li>
+            <li><a href="#">English Language Learning</a></li>
+            <li><a href="#">Pre-College &amp; High School Equivalency</a></li>
+            <li><a href="#">Career Skills &amp; Workforce Training</a></li>
+            <li><a href="#">Small Business &amp; Entrepreneur Services</a></li>
+            <li><a href="#">Find Courses, Certificates and Programs</a></li>
+            <li><a href="#">Current Catalog</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Students <span class="nav-caret"></span></a>
+          <ul class="submenu">
+            <li><a href="#">Student Affairs</a></li>
+            <li><a href="#">Rebel's Resources</a></li>
+            <li><a href="#">Campus Life</a></li>
+            <li><a href="#">Athletics and Recreation</a></li>
+            <li><a href="#">Peer Programs</a></li>
+            <li><a href="#">Student Events</a></li>
+            <li><a href="#">Wellness Center</a></li>
+            <li><a href="#">Health Center</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">About <span class="nav-caret"></span></a>
+          <ul class="submenu">
+            <li><a href="#">At a Glance</a></li>
+            <li><a href="#">Maps and Directions</a></li>
+            <li><a href="#">Mission &amp; Core Values</a></li>
+            <li><a href="#">President Kenneth Adams</a></li>
+            <li><a href="#">President's Cabinet</a></li>
+            <li><a href="#">Compliance and Diversity</a></li>
+            <li><a href="#">Public Safety</a></li>
+            <li><a href="#">Divisions and Departments</a></li>
+            <li><a href="#">Research and Effectiveness</a></li>
+            <li><a href="#">Strategic Plan 2025–2029</a></li>
+            <li><a href="#">LaGuardia Foundation</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════
+     PAGE WRAP (1140px centered, white bg)
+══════════════════════════════════════════ -->
+
+<!-- GRAY BANNER: title only — full width gray, inner content centered -->
+<div style="background: var(--grey-light); width: 100%;">
+  <div class="page-wrap">
+    <div class="page-banner">
+      <h1>Human Resources</h1>
+    </div>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+<!-- ══════════════════════════════════════════
+     PAGE BODY
+══════════════════════════════════════════ -->
+<div class="page-body">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+
+    <div class="sidebar-contact">
+      <h2>Contact Us</h2>
+      <p><strong>Room:</strong> E-Building, E-407</p>
+      <p><strong>Phone:</strong> (718) 482-5075</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <!-- if needed to activate the color
+        <li class="active"><a href="#"><span>Directory</span></a></li>
+      -->
+      <li><a href="#"><span>Directory</span></a></li>
+      <li><a href="#"><span>Water Cooler</span></a></li>
+      <li>
+        <a href="#">
+          <span>Employment Services</span>
+          <span class="sub-chevron"><i class="fas fa-chevron-right"></i></span>
+        </a>
+        <ul class="sidebar-sub">
+          <li><a href="#">Classified Staff</a></li>
+          <li><a href="#">ECP/HEO</a></li>
+          <li><a href="#">Faculty/Adjunct/CLT</a></li>
+          <li><a href="#">Non-Tax Levy</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#"><span>Benefits</span></a></li>
+      <li><a href="#"><span>Recruitment</span></a></li>
+      <li><a href="Technology.html"><span>Technology and Data</span></a></li>
+      <li><a href="Training_v2.html"><span>Training and Development</span></a></li>
+
+    </ul>
+
+  </aside>
+
+  <!-- ── MAIN CONTENT ── -->
+  <main class="main-content">
+
+    <!-- ═══════════════════════════════
+         SECTION 1: HERO
+         Update: headline, subtext, button label/href, image src
+    ═══════════════════════════════ -->
+    <section style="display:flex; align-items:center; gap:36px; padding:36px 0 40px; margin-bottom: 70px;">
+      
+      <div style="flex:1;">
+        <p style="font-size:12px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#C4262E; margin-bottom:10px;">Welcome</p>
+        <h2 style="font-family:'Overpass', sans-serif; font-size:32px; font-weight:400; color:#111; line-height:1.25; margin-bottom:16px;">Putting the "Human" Back in Human Resources</h2>
+        <p style="font-size:16px; color:#555; line-height:1.7; margin-bottom:24px;">From recruitment to retirement, the Office of Human Resources is here to help LaGuardia faculty and staff thrive.</p>
+        <p style="font-size:16px; color:#555; line-height:1.7; margin-bottom:24px;">We are real people (we promise!) here to serve YOUR needs. Come learn more about us and stop by the water cooler to get the latest HR news.</p>
+        <a href="#" class="hc-hero__btn" style="display:inline-block; background:#C4262E; color:#fff; font-size:14px; font-weight:500; padding:10px 24px; border-radius:2px; transition:background 0.2s;">Learn More</a>
+      </div>
+    
+      <div style="flex:0 0 45%;">
+        <img src="assets/hrbunchphoto.png" alt="HR Staff" style="width:100%; aspect-ratio:1/1; object-fit:cover; display:block; border-radius:2px;">
+      </div>
+    
+    </section>
+
+<!-- ═══════════════════════════════
+     SECTION 2: STAFF SPOTLIGHT
+     Inline styles converted from Home_V3.html
+═══════════════════════════════ -->
+
+    <section style="background:#F2F2F2; margin:0 -24px; padding:40px 24px; border-top:1px solid #ebebeb;">
+      <h2 style="font-family:'Roboto', sans-serif; font-size:20px; font-weight:500; color:#000000; margin-bottom:24px; padding-bottom:10px; border-bottom:2px solid #C4262E; display:inline-block;">Staff Spotlight</h2>
+        <div style="display:flex;gap:30px;align-items:flex-start;">
+          <div>
+            <img src="assets/Yasu.jfif" alt="Staff Member" style="width:120px;height:120px;border-radius:50%;object-fit:cover;display:block;border:3px solid #ffffff;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+          </div>
+            <div style="flex:1;">
+              <blockquote style="font-size:16px;font-style:italic;color:#444444;line-height:1.65;border-left:3px solid #C4262E;padding-left:16px;margin-bottom:16px;">"Working in HR means every day I have the opportunity to make a real difference in someone's career journey."</blockquote>
+                <p style="font-weight:700;font-size:15px;margin-bottom:2px;">Yasu Denda</p>
+                <p style="font-size:14px;color:#C4262E;margin-bottom:10px;">Training & Development Coordinator</p>
+                <p style="font-size:14px;color:#555555;line-height:1.6;margin:0;">Yasu has been with LaGuardia for over 2 years, specializing in training and development programs.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr style="border:none; border-top:0px solid #ebebeb; margin:0 0 50px;">
+
+<!-- ═══════════════════════════════
+     SECTION 3: IMAGE GALLERY (3-up)
+     Inline styles converted from Home_V3.html
+═══════════════════════════════ -->
+
+<section style="background:#F2F2F2;margin:0 -24px;padding:40px 24px;border-top:1px solid #ebebeb;">
+  <h2 style="font-family:'Roboto', sans-serif;font-size:20px;font-weight:500;color:#000000;margin-bottom:24px;padding-bottom:10px;border-bottom:2px solid #C4262E;display:inline-block;">Photo Fun</h2>
+  <div style="display:flex;gap:12px;align-items:stretch;">
+    <!-- Featured Large Photo -->
+    <figure style="margin:0;position:relative;overflow:hidden;flex:0 0 60%;">
+      <img src="assets/benefitsphoto.jpg"alt="Campus event"style="display:block;width:100%;height:100%;object-fit:cover;">
+      <figcaption style="font-size:12px;color:#666666;padding:6px 2px 0;">Annual Benefits Fair</figcaption>
+    </figure>
+    <!-- Right Column Stack -->
+    <div style="flex:1;display:flex;flex-direction:column;gap:12px;">
+      <figure style="margin:0;position:relative;overflow:hidden;flex:1;">
+        <img src="assets/halloween.jpeg"alt=""style="display:block;width:100%;height:100%;object-fit:cover;">
+        <figcaption style="font-size:12px;color:#666666;padding:6px 2px 0;">New Employee Orientation</figcaption>
+      </figure>
+      <figure style="margin:0;position:relative;overflow:hidden;flex:1;">
+        <img src="assets/elves.png"alt=""style="display:block;width:100%;height:100%;object-fit:cover;">
+        <figcaption style="font-size:12px;color:#666666;padding:6px 2px 0;">
+          Professional Development Workshop
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     SECTION 4: ANNOUNCEMENTS / NEWS CARDS
+     Fully Inline Styles
+═══════════════════════════════ -->
+
+<section style="padding:40px 0;border-top:1px solid #ebebeb;font-family:'Roboto', Arial, sans-serif;">
+  <h2 style="font-family:'Roboto', sans-serif;font-size:20px;font-weight:500;color:#000000;margin:0 0 24px;padding-bottom:10px;border-bottom:2px solid #C4262E;display:inline-block">Latest Announcements</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+
+    <!-- CARD 1 -->
+    <div style="border:1px solid #e5e5e5;padding:20px;border-top:3px solid #C4262E;background:#ffffff;">
+      <span style="font-size:12px;color:#888888;display:block;margin-bottom:4px;">Jan 15, 2025</span>
+      <span style="display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:#C4262E;margin-bottom:10px;">Benefits</span>
+      <h3 style="font-size:15px;font-weight:500;line-height:1.4;margin:0 0 10px;">
+      <a href="#" style="color:#000000;font-size:15px;text-decoration:none;">Health Plan Rate Changes for 2025</a></h3>
+      <p style="font-size:14px;color:#555555;line-height:1.6;margin:0;">Updated premium rates take effect February 1. Review the new schedule and contact HR with questions.</p>
+    </div>
+
+    <!-- CARD 2 -->
+    <div style="border:1px solid #e5e5e5;padding:20px;border-top:3px solid #C4262E;background:#ffffff;">
+      <span style="font-size:12px;color:#888888;display:block;margin-bottom:4px;">Dec 10, 2024</span>
+      <span style="display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:#C4262E;margin-bottom:10px;">Policy</span>
+      <h3 style="font-size:15px;font-weight:500;line-height:1.4;margin:0 0 10px;">
+        <a href="#" style="color:#000000;font-size:15px;text-decoration:none;">Workplace Violence Prevention Update</a></h3>
+      <p style="font-size:14px;color:#555555;line-height:1.6;margin:0;">The updated prevention program is now in effect. All staff are required to complete the annual training.</p>
+    </div>
+
+    <!-- CARD 3 -->
+    <div style="border:1px solid #e5e5e5;padding:20px;border-top:3px solid #C4262E;background:#ffffff;">
+      <span style="font-size:12px;color:#888888;display:block;margin-bottom:4px;">Nov 28, 2024</span>
+      <span style="display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:#C4262E;margin-bottom:10px;">Hiring</span>
+      <h3 style="font-size:15px;font-weight:500;line-height:1.4;margin:0 0 10px;">
+      <a href="#" style="color:#000000;font-size:15px;text-decoration:none;">New Personnel Orders Posted</a></h3>
+      <p style="font-size:14px;color:#555555;line-height:1.6;margin:0;">Personnel orders 2024-01 through 2024-03 are now available. See the announcements section for details.
+      </p>
+    </div>
+  </div>
+</section>
+
+    <!-- ═══════════════════════════════
+     SECTION 5: UPCOMING EVENTS
+     Inline styles converted from Home_V3.html
+═══════════════════════════════ -->
+
+<section style="padding:40px 0;border-top:1px solid #ebebeb;">
+<h2 style="font-family:'Roboto', sans-serif;font-size:20px;font-weight:500;color:#000000;margin-bottom:24px;padding-bottom:10px;border-bottom:2px solid #C4262E;display:inline-block;">Upcoming Events</h2>
+<div style="display:flex;flex-direction:column;gap:1px;">
+  <!-- EVENT 1 -->
+  <a href="#" style="display:flex;align-items:center;gap:20px;padding:16px 0;border-bottom:1px solid #ebebeb;color:#000000;text-decoration:none;font-family:'Roboto', sans-serif;">
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;background:#C4262E;color:#ffffff;width:52px;height:52px;flex-shrink:0;border-radius:2px;text-align:center;">
+    <span style="font-size:10px;font-weight:700;letter-spacing:1px;line-height:1;">
+        FEB</span>
+      <span style="font-size:22px;font-weight:700;line-height:1.1;">12</span>
+    </div>
+    <div>
+      <h3 style="font-size:15px;font-weight:500; margin-bottom:4px;color:#000000;">Open Enrollment Information Session</h3>
+      <p style="font-size:13px;color:#777777;margin:0;">10:00 AM – 11:30 AM &nbsp;·&nbsp; Room E-407</p>
+    </div>
+  </a>
+  <!-- EVENT 2 -->
+  <a href="#" style="display:flex;align-items:center;gap:20px;padding:16px 0;border-bottom:1px solid #ebebeb;color:#000000;text-decoration:none;font-family:'Roboto', sans-serif;">
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;background:#C4262E;color:#ffffff;width:52px;height:52px;flex-shrink:0;border-radius:2px;text-align:center;">
+      <span style="font-size:10px;font-weight:700;letter-spacing:1px;line-height:1;">FEB</span>
+      <span style="font-size:22px;font-weight:700;line-height:1.1;">20</span>
+</div>
+    <div>
+      <h3 style="font-size:15px;font-weight:500;margin-bottom:4px;color:#000000;">New Employee Orientation</h3>
+<p style="font-size:13px;color:#777777;margin:0;">9:00 AM – 12:00 PM &nbsp;·&nbsp; Room M-200</p>
+</div>
+</a>
+  <!-- EVENT 3 -->
+<a href="#" style="display:flex;align-items:center;gap:20px;padding:16px 0;border-bottom:1px solid #ebebeb;color:#000000;text-decoration:none;font-family:'Roboto', sans-serif;">
+<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;background:#C4262E;color:#ffffff;width:52px;height:52px;flex-shrink:0;border-radius:2px;text-align:center;">
+      <span style="font-size:10px;font-weight:700;letter-spacing:1px;line-height:1;">MAR</span>
+      <span style="font-size:22px;font-weight:700;line-height:1.1;">5</span>
+    </div>
+    <div>
+      <h3 style="font-size:15px;font-weight:500;margin-bottom:4px;color:#000000;">Professional Development Workshop</h3>
+      <p style="font-size:13px;color:#777777;margin:0;">1:00 PM – 3:00 PM &nbsp;·&nbsp; Online (Zoom)</p>
+</div>
+</a>
+  <!-- EVENT 4 -->
+  <a href="#" style="display:flex;align-items:center;gap:20px;padding:16px 0;border-bottom:1px solid #ebebeb;color:#000000;text-decoration:none;font-family:'Roboto', sans-serif;">
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;background:#C4262E;color:#ffffff;width:52px;height:52px;flex-shrink:0;border-radius:2px;text-align:center;">
+      <span style="font-size:10px;font-weight:700;letter-spacing:1px;line-height:1;"> MAR</span>
+      <span style="font-size:22px;font-weight:700;line-height:1.1;">18</span>
+    </div>
+    <div>
+      <h3 style="font-size:15px;font-weight:500;margin-bottom:4px;color:#000000;">Pension Plan Q&amp;A Session</h3>
+<p style="font-size:13px;color:#777777;margin:0;">2:00 PM – 3:30 PM &nbsp;·&nbsp; Room E-407
+      </p>
+    </div>
+  </a>
+</div>
+</section>
+
+<!-- ═══════════════════════════════
+     SECTION 6: QUICK LINKS GRID
+     Inline styles converted from Home_V3.html
+═══════════════════════════════ -->
+
+<section style="background:#F2F2F2;margin:0 -24px;padding:40px 24px;border-top:1px solid #ebebeb;">
+<h2 style="font-family:'Roboto', sans-serif;font-size:20px;font-weight:500;color:#000000;margin-bottom:24px;padding-bottom:10px;border-bottom:2px solid #C4262E;display:inline-block;">I have a question about...</h2>
+<div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;">
+
+  <a href="#" style="display:flex;align-items:center;gap:14px;background:#ffffff;padding:16px 18px;border:1px solid #e5e5e5;color:#000000;font-size:15px;font-weight:500;text-decoration:none;font-family:'Roboto', sans-serif;">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C4262E" stroke-width="1.8" stroke-linecap="round" style="color:#C4262E;flex-shrink:0;">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+    </svg>
+    <span>Classified Staff</span>
+  </a>
+
+  <a href="#" style="display:flex;align-items:center;gap:14px;background:#ffffff;padding:16px 18px;border:1px solid #e5e5e5;color:#000000;font-size:15px;font-weight:500;text-decoration:none;font-family:'Roboto', sans-serif;">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C4262E" stroke-width="1.8" stroke-linecap="round" style="color:#C4262E;flex-shrink:0;">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+    </svg>
+    <span>ECPs/HEO</span>
+  </a>
+
+  <a href="#" style="display:flex;align-items:center;gap:14px;background:#ffffff;padding:16px 18px;border:1px solid #e5e5e5;color:#000000;font-size:15px;font-weight:500;text-decoration:none;font-family:'Roboto', sans-serif;">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C4262E" stroke-width="1.8" stroke-linecap="round" style="color:#C4262E;flex-shrink:0;">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+    </svg>
+    <span>Faculty/Adjuncts/CLTs</span>
+  </a>
+
+  <a href="#" style="display:flex;align-items:center;gap:14px;background:#ffffff;padding:16px 18px;border:1px solid #e5e5e5;color:#000000;font-size:15px;font-weight:500;text-decoration:none;font-family:'Roboto', sans-serif;">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C4262E" stroke-width="1.8" stroke-linecap="round" style="color:#C4262E;flex-shrink:0;">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+    </svg>
+    <span>Non-Tax Levy</span>
+  </a>
+
+  <a href="#" style="display:flex;align-items:center;gap:14px;background:#ffffff;padding:16px 18px;border:1px solid #e5e5e5;color:#000000;font-size:15px;font-weight:500;text-decoration:none;font-family:'Roboto', sans-serif;">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C4262E" stroke-width="1.8" stroke-linecap="round" style="color:#C4262E;flex-shrink:0;">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+    </svg>
+    <span>Benefits</span>
+  </a>
+
+  <a href="#" style="display:flex;align-items:center;gap:14px;background:#ffffff;padding:16px 18px;border:1px solid #e5e5e5;color:#000000;font-size:15px;font-weight:500;text-decoration:none;font-family:'Roboto', sans-serif;">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C4262E" stroke-width="1.8" stroke-linecap="round" style="color:#C4262E;flex-shrink:0;">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+    </svg>
+    <span>Recruitment</span>
+  </a>
+
+  <a href="Technology.html" style="display:flex;align-items:center;gap:14px;background:#ffffff;padding:16px 18px;border:1px solid #e5e5e5;color:#000000;font-size:15px;font-weight:500;text-decoration:none;font-family:'Roboto', sans-serif;">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C4262E" stroke-width="1.8" stroke-linecap="round" style="color:#C4262E;flex-shrink:0;">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
+    </svg>
+    <span>Technology and Data</span>
+  </a>
+
+  <a href="Training_v2.html" style="display:flex;align-items:center;gap:14px;background:#ffffff;padding:16px 18px;border:1px solid #e5e5e5;color:#000000;font-size:15px;font-weight:500;text-decoration:none;font-family:'Roboto', sans-serif;">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C4262E" stroke-width="1.8" stroke-linecap="round" style="color:#C4262E;flex-shrink:0;">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
+    </svg>
+    <span>Training and Development</span>
+  </a>
+
+</div>
+
+</section>
+
+  </main>
+</div><!-- /page-body -->
+</div><!-- /page-wrap -->
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="footer-inner-wrap">
+  <div class="footer-inner">
+
+    <!-- Contact Us -->
+    <div>
+      <p class="footer-col-heading">Contact Us</p>
+      <ul class="f-icon-list">
+        <li>
+          <svg class="f-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.14 1.16 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.9.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <span>To contact us, call (718) 482-7200</span>
+        </li>
+        <li>
+          <svg class="f-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <a href="#">CUNY LaGuardia Community College<br>31-10 Thomson Avenue<br>Long Island City, NY 11101 USA</a>
+        </li>
+      </ul>
+      <div class="f-map-link"><a href="#">Map and Directions</a></div>
+    </div>
+
+    <!-- Quicklinks -->
+    <div>
+      <p class="footer-col-heading">Quicklinks</p>
+      <ul class="f-links">
+        <li><a href="#">Apply Now</a></li>
+        <li><a href="#">Compliance and Diversity</a></li>
+        <li><a href="#">Emergency Information</a></li>
+        <li><a href="#">Employment Opportunities</a></li>
+        <li><a href="#">Faculty and Staff Email</a></li>
+        <li><a href="#">Website Feedback</a></li>
+      </ul>
+    </div>
+
+    <!-- Follow Us -->
+    <div>
+      <p class="footer-col-heading">Follow Us</p>
+      <div class="f-social">
+        <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#fff"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="#" aria-label="Flickr"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="7" cy="12" r="4"/><circle cx="17" cy="12" r="4"/></svg></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>2026 © Copyright. All Rights Reserved</p>
+    <ul class="footer-bottom-links">
+      <li><a href="#">Security</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Policies &amp; Governance</a></li>
+      <li><a href="#">Equal Opportunity and Non-Discrimination</a></li>
+      <li><a href="#">Get Acrobat Reader</a></li>
+    </ul>
+    <div class="footer-cuny">
+      <img src="https://www.laguardia.edu/wp-content/uploads/elementor/thumbs/CUNY-White-Logo@0.1x-pxidlnwa8q6hjhux3ox9f1ljr7ccn19u4sbmirf24w.png" alt="CUNY">
+    </div>
+  </div><!-- /footer-bottom -->
+  </div><!-- /footer-inner-wrap -->
+</footer>
+
+<script>
+  function toggleAcc(titleEl) {
+    titleEl.closest('.acc-item').classList.toggle('is-open');
+  }
+  function toggleDept(id) {
+    document.getElementById(id).classList.toggle('is-open');
+  }
+</script>
+</body>
+</html>
