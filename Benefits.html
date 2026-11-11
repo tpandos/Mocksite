@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Benefits - Human Resources - LaGuardia Community College</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Overpass:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── CSS VARIABLES (from source) ─── */
+    :root {
+      --primary:    #C4262E;
+      --primary-hover: #DB343D;
+      --text:       #000000;
+      --grey-light: #F2F2F2;
+      --grey-mid:   #CCCCCC;
+      --white:      #FFFFFF;
+      --link-blue:  #2A7AB0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      color: var(--text);
+      background: #fff;
+      line-height: 24px;
+    }
+    a { text-decoration: none; color: var(--primary); font-family: "Roboto", sans-serif; font-size: 16px; }
+    a:hover { color: var(--primary-hover); }
+    p { margin-bottom: 12px; }
+
+    /* Page-wide centering wrapper */
+    .page-wrap {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    /* Gray banner — title only */
+    .page-banner {
+      padding: 28px 24px 36px;
+    }
+    .page-banner h1 {
+      font-family: "Overpass", sans-serif;
+      font-size: 48px;
+      font-weight: 400;
+      color: var(--primary);
+      line-height: 56px;
+    }
+
+    /* ══════════════════════════════════════════
+       TOP UTILITY BAR
+    ══════════════════════════════════════════ */
+    .top-bar {
+      background: var(--primary);
+      min-height: 40px;
+    }
+    .top-bar-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      min-height: 40px;
+    }
+    .top-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+    /* Social icons */
+    .top-social {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      margin-right: 16px;
+    }
+    .top-social a {
+      color: #fff;
+      width: 28px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px;
+    }
+    .top-social a:hover { color: #FED501; }
+
+    /* "Make this website talk" — left side, after social */
+    .top-talk button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .top-talk button:hover { color: #FED501; }
+
+    /* Right utility links */
+    .top-right {
+      display: flex;
+      align-items: center;
+      list-style: none;
+    }
+    .top-right > li { position: relative; }
+    .top-right > li > a {
+      color: #fff;
+      font-size: 14px;
+      font-family: "Roboto", sans-serif;
+      padding: 0 12px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+    }
+    .top-right > li > a:hover { color: #FED501; }
+    .top-caret {
+      display: inline-block; width: 0; height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid #fff;
+      vertical-align: middle;
+    }
+    /* Search button */
+    .top-search {
+      background: none; border: none; cursor: pointer;
+      color: #fff; height: 40px; padding: 0 10px;
+      display: flex; align-items: center; font-size: 16px;
+    }
+    .top-search:hover { color: #FED501; }
+
+    /* Login dropdown */
+    .top-right .login-menu {
+      display: none;
+      position: absolute; top: 40px; right: 0;
+      background: #fff;
+      border-top: 3px solid var(--primary);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      min-width: 210px;
+      z-index: 9999;
+      list-style: none;
+    }
+    .top-right li:hover .login-menu { display: block; }
+    .top-right .login-menu li a {
+      display: block;
+      padding: 9px 16px;
+      font-size: 14px;
+      color: #333;
+      border-bottom: 1px solid #eee;
+      height: auto;
+    }
+    .top-right .login-menu li a:hover { background: var(--grey-light); color: var(--primary); }
+
+    /* ══════════════════════════════════════════
+       MAIN HEADER
+    ══════════════════════════════════════════ */
+    .main-header {
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+      width: 100%;
+    }
+    .main-header-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 100px;
+    }
+    .site-logo img { width: 167px; height: auto; display: block; }
+
+    /* Main Nav */
+    .main-nav { display: flex; list-style: none; height: 100px; }
+    .main-nav > li { position: relative; display: flex; }
+    .main-nav > li > a {
+      display: flex; align-items: center; gap: 6px;
+      padding: 0 16px;
+      font-size: 15px;
+      font-weight: 400;
+      color: #222;
+      white-space: nowrap;
+      font-family: "Roboto", sans-serif;
+      border-bottom: 3px solid transparent;
+    }
+    .main-nav > li:hover > a { color: var(--primary); border-bottom-color: var(--primary); }
+    .nav-caret {
+      display: inline-block; width: 0; height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid #aaa;
+    }
+    .main-nav > li:hover .nav-caret { border-top-color: var(--primary); }
+    .main-nav .submenu {
+      display: none;
+      position: absolute; top: 100px; left: 0;
+      background: #fff;
+      border-top: 3px solid var(--primary);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      min-width: 235px;
+      z-index: 9999;
+      list-style: none;
+    }
+    .main-nav > li:hover .submenu { display: block; }
+    .main-nav .submenu li a {
+      display: block;
+      padding: 11px 18px;
+      font-size: 14px;
+      color: #333;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .main-nav .submenu li a:hover { color: var(--primary); background: var(--grey-light); }
+
+    .breadcrumb-wrap {
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .breadcrumb-wrap a { color: var(--primary); font-size: 14px; font-weight: 400; }
+    .breadcrumb-wrap a:hover { text-decoration: underline; }
+    .breadcrumb-wrap .sep { margin: 0 5px; color: #333; font-weight: 400; }
+
+    .page-title-section { padding: 0; background: transparent; }
+    .page-title-section h1 {
+      font-family: "Overpass", sans-serif;
+      font-size: 48px;
+      font-weight: 400;
+      color: var(--primary);
+      line-height: 56px;
+    }
+
+    /* ══════════════════════════════════════════
+       PAGE BODY LAYOUT
+    ══════════════════════════════════════════ */
+    .page-body {
+      padding: 36px 24px 60px;
+      display: flex;
+      gap: 48px;
+      align-items: flex-start;
+    }
+
+    /* ══════════════════════════════════════════
+       SIDEBAR
+    ══════════════════════════════════════════ */
+    .sidebar { width: 380px; flex-shrink: 0; }
+
+    /* Contact Us box */
+    .sidebar-contact { margin-bottom: 28px; }
+    .sidebar-contact h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 12px;
+      font-family: "Roboto", sans-serif;
+    }
+    .sidebar-contact p { font-size: 16px; color: #333; line-height: 1.7; margin-bottom: 2px; }
+    .sidebar-contact strong { font-weight: 700; }
+
+    /* Section Nav — vertical, e--pointer-background e--animation-sweep-right */
+    .sidebar-nav {
+      list-style: none;
+      border-top: 2px solid var(--grey-light);
+      border-bottom: 2px solid var(--grey-light);
+      margin-bottom: 32px;
+      padding: 8px 0;
+    }
+    .sidebar-nav > li { position: relative; margin-bottom: 2px; }
+    .sidebar-nav > li > a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      font-size: 16px;
+      color: var(--text);
+      font-family: "Roboto", sans-serif;
+      position: relative;
+      overflow: hidden;
+      transition: color 0.3s;
+    }
+    .sidebar-nav > li > a::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--grey-light);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 0;
+    }
+    .sidebar-nav > li > a:hover::before,
+    .sidebar-nav > li.active > a::before { transform: translateX(0); }
+    .sidebar-nav > li > a:hover,
+    .sidebar-nav > li.active > a { color: var(--primary); }
+    .sidebar-nav > li > a span { position: relative; z-index: 1; }
+    .sidebar-nav > li > a .sub-chevron {
+      position: relative; z-index: 1;
+      font-size: 13px; color: #888;
+    }
+
+    /* Sub-nav (Time and Leave) — flyout to the right */
+    .sidebar-sub {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-top: 3px solid var(--grey-light);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      min-width: 180px;
+      z-index: 999;
+      list-style: none;
+    }
+    .sidebar-nav li:hover > .sidebar-sub,
+    .sidebar-nav li.sub-open > .sidebar-sub { display: block; }
+    .sidebar-sub li { border-bottom: 1px solid #f0f0f0; }
+    .sidebar-sub li:last-child { border-bottom: none; }
+    .sidebar-sub li a {
+      display: block;
+      padding: 14px 20px;
+      font-size: 15px;
+      color: #333;
+      font-family: "Roboto", sans-serif;
+      background: #fff;
+      white-space: nowrap;
+    }
+    .sidebar-sub li a:hover { color: var(--primary); background: var(--grey-light); }
+
+    /* Announcements */
+    .sidebar-ann { font-size: 14px; }
+    .sidebar-ann h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+    .sidebar-ann .ann-promo {
+      font-style: italic;
+      color: #333;
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+    .sidebar-ann .ann-wa { color: var(--primary); display: block; margin-bottom: 4px; }
+    .sidebar-ann .ann-wa:hover { text-decoration: underline; }
+    .sidebar-ann .ann-code { color: #333; margin-bottom: 14px; }
+    .sidebar-ann .ann-code a { color: var(--primary); }
+    .sidebar-ann ul { list-style: disc; margin-left: 16px; }
+    .sidebar-ann ul li { margin-bottom: 4px; line-height: 1.45; }
+    .sidebar-ann ul li a { color: var(--primary); font-size: 14px; }
+    .sidebar-ann ul li a:hover { text-decoration: underline; }
+
+    /* PDF badge */
+    .pdf-badge {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      font-size: 9px;
+      font-weight: 700;
+      padding: 1px 3px;
+      border-radius: 2px;
+      margin-left: 3px;
+      line-height: 1.5;
+      vertical-align: middle;
+      font-family: Arial, sans-serif;
+    }
+
+    /* ══════════════════════════════════════════
+       MAIN CONTENT
+    ══════════════════════════════════════════ */
+    .main-content { flex: 1; min-width: 0; }
+
+    /* Welcome section */
+    .welcome-section { margin-bottom: 32px; }
+    .welcome-section h2 {
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 18px;
+      font-family: "Roboto", sans-serif;
+    }
+    .welcome-section p {
+      font-size: 16px;
+      line-height: 24px;
+      color: #333;
+      margin-bottom: 14px;
+    }
+
+    /* ══════════════════════════════════════════
+       ACCORDION (Elementor Toggle style)
+    ══════════════════════════════════════════ */
+    .acc-wrap { margin-bottom: 36px; }
+
+    .acc-item { }
+
+    .acc-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--grey-light);
+      padding: 16px 16px;
+      cursor: pointer;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid transparent;
+      transition: background 0.15s;
+      user-select: none;
+    }
+    .acc-item:last-child .acc-title { border-bottom: 1px solid #ddd; }
+    .acc-item.is-open .acc-title { border-bottom: 1px solid #ddd; }
+
+    .acc-title-text {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text);
+      font-family: "Roboto", sans-serif;
+      line-height: 24px;
+    }
+    .acc-item.is-open .acc-title-text { color: var(--primary); }
+
+    .acc-icon {
+      display: inline-block;
+      width: 0; height: 0;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 8px solid #333;
+      transition: transform 0.2s, border-left-color 0.15s;
+      flex-shrink: 0;
+      margin-left: 12px;
+    }
+    .acc-item.is-open .acc-icon {
+      border-left-color: var(--primary);
+      transform: rotate(90deg);
+    }
+
+    .acc-body {
+      display: none;
+      padding: 24px 24px 24px 24px;
+      font-size: 16px;
+      line-height: 24px;
+      color: #333;
+      border-left: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+    .acc-item.is-open .acc-body { display: block; }
+
+    .acc-body p { margin-bottom: 10px; }
+    .acc-body p a { color: var(--primary); }
+    .acc-body ul { list-style: disc; margin-left: 22px; margin-bottom: 8px; }
+    .acc-body ul li { margin-bottom: 5px; line-height: 1.6; }
+    .acc-body ul li a { color: var(--primary); }
+    .acc-body ul li a:hover,
+    .acc-body p a:hover { text-decoration: underline; }
+    .acc-body strong { font-weight: 700; }
+    .acc-body h4 { font-size: 16px; font-weight: 700; color: #222; margin: 14px 0 8px; }
+
+    /* Two-col forms/links */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+    /* Tables inside accordion */
+    .acc-body table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+    .acc-body table th {
+      background: #444;
+      color: #fff;
+      padding: 8px 12px;
+      text-align: left;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .acc-body table td { padding: 8px 12px; border-bottom: 1px solid #eee; vertical-align: top; }
+    .acc-body table tr:nth-child(even) td { background: #fafafa; }
+    .acc-body table a { color: var(--primary); }
+
+    /* ══════════════════════════════════════════
+       DEPARTMENT CONTACTS (separate toggle)
+    ══════════════════════════════════════════ */
+    .dept-heading {
+      font-size: 26px;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 20px;
+      font-family: "Roboto", sans-serif;
+    }
+
+    .dept-toggle { }
+    .dept-toggle-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 0;
+      cursor: pointer;
+      border-bottom: 1px solid #e4e4e4;
+      font-size: 16px;
+      color: var(--text);
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      user-select: none;
+    }
+    .dept-toggle-title .d-icon {
+      display: inline-block;
+      width: 0; height: 0;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 8px solid #333;
+      transition: transform 0.2s, border-left-color 0.15s;
+      flex-shrink: 0;
+    }
+    .dept-toggle.is-open .dept-toggle-title { color: var(--primary); }
+    .dept-toggle.is-open .dept-toggle-title .d-icon {
+      border-left-color: var(--primary);
+      transform: rotate(90deg);
+    }
+
+    .dept-toggle-body {
+      display: none;
+      padding: 16px 0 24px 40px;
+      font-size: 16px;
+      line-height: 24px;
+      color: #333;
+    }
+    .dept-toggle.is-open .dept-toggle-body { display: block; }
+
+    .dept-toggle-body p { margin-bottom: 10px; }
+    .dept-toggle-body p a { color: var(--primary); }
+    .dept-toggle-body strong { font-weight: 700; }
+    .dept-toggle-body ol { margin: 8px 0 12px 20px; line-height: 1.8; }
+    .dept-toggle-body ol a { color: var(--primary); }
+
+    .dept-toggle-body table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    .dept-toggle-body table th {
+      background: #444;
+      color: #fff;
+      padding: 8px 12px;
+      text-align: left;
+      font-size: 13px;
+    }
+    .dept-toggle-body table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid #eee;
+      vertical-align: top;
+    }
+    .dept-toggle-body table tr:nth-child(even) td { background: #fafafa; }
+    .dept-toggle-body table a { color: var(--primary); }
+
+    /* ══════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════ */
+    .site-footer {
+      background: var(--grey-light);
+      border-top: 1px solid #ddd;
+      padding: 0;
+    }
+    .footer-inner-wrap {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 48px 24px 24px;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 2fr 1.2fr 1fr;
+      gap: 60px;
+      margin-bottom: 36px;
+    }
+    .footer-col-heading {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      font-family: "Roboto", sans-serif;
+    }
+
+    /* Icon list (contact) */
+    .f-icon-list { list-style: none; }
+    .f-icon-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 16px;
+      font-size: 15px;
+      color: #333;
+      line-height: 1.6;
+    }
+    .f-icon-list .f-icon {
+      color: var(--primary);
+      font-size: 16px;
+      margin-top: 2px;
+      flex-shrink: 0;
+      width: 16px;
+      text-align: center;
+    }
+    .f-icon-list a { color: var(--primary); font-size: 15px; }
+    .f-icon-list a:hover { text-decoration: underline; }
+    .f-map-link { margin-top: 4px; padding-left: 30px; }
+    .f-map-link a { color: var(--primary); font-size: 15px; }
+    .f-map-link a:hover { text-decoration: underline; }
+
+    /* Quicklinks */
+    .f-links { list-style: none; }
+    .f-links li { margin-bottom: 10px; }
+    .f-links li a { font-size: 15px; color: #333; font-family: "Roboto", sans-serif; }
+    .f-links li a:hover { color: var(--primary); text-decoration: underline; }
+
+    /* Social icons — plain red, no background box */
+    .f-social {
+      display: grid;
+      grid-template-columns: repeat(3, 42px);
+      gap: 10px;
+    }
+    .f-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px; height: 42px;
+      color: var(--primary);
+      font-size: 22px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background: #fff;
+    }
+    .f-social a:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    /* Footer bottom bar */
+    .footer-bottom {
+      border-top: 1px solid #ddd;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p { font-size: 13px; color: #666; }
+    .footer-bottom-links { list-style: none; display: flex; flex-wrap: wrap; gap: 18px; }
+    .footer-bottom-links li a { font-size: 13px; color: #666; }
+    .footer-bottom-links li a:hover { color: var(--primary); }
+    .footer-cuny img { height: 26px; opacity: 0.6; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     TOP UTILITY BAR
+══════════════════════════════════════════ -->
+<div class="top-bar">
+ <div class="top-bar-inner">
+
+  <!-- LEFT: Social icons + Make this website talk -->
+  <div class="top-bar-left">
+    <div class="top-social">
+      <!-- Facebook -->
+      <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+      <!-- Instagram -->
+      <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><circle cx="17.5" cy="6.5" r="0.5" fill="#fff"/></svg></a>
+      <!-- X / Twitter -->
+      <a href="#" aria-label="X"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <!-- YouTube -->
+      <a href="#" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#C4262E"/></svg></a>
+      <!-- LinkedIn -->
+      <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+      <!-- Flickr -->
+      <a href="#" aria-label="Flickr"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><circle cx="7" cy="12" r="4"/><circle cx="17" cy="12" r="4"/></svg></a>
+    </div>
+    <div class="top-talk">
+      <button type="button">Make this website talk</button>
+    </div>
+  </div>
+
+  <!-- RIGHT: Login, Library, Make a Gift, Directory, Search -->
+  <ul class="top-right">
+    <li>
+      <a href="#">Login <span class="top-caret"></span></a>
+      <ul class="login-menu">
+        <li><a href="#">Navigate – Students</a></li>
+        <li><a href="#">Navigate – Staff &amp; Faculty</a></li>
+        <li><a href="#">Student Email</a></li>
+        <li><a href="#">Faculty/Staff Portal</a></li>
+        <li><a href="#">Faculty/Staff Email</a></li>
+        <li><a href="#">CUNY first</a></li>
+        <li><a href="#">Brightspace</a></li>
+        <li><a href="#">ePortfolio</a></li>
+        <li><a href="#">DegreeWorks</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Library</a></li>
+    <li><a href="#">Make a Gift</a></li>
+    <li><a href="#">Directory</a></li>
+    <li>
+      <button class="top-search" aria-label="Search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+    </li>
+  </ul>
+
+ </div><!-- /top-bar-inner -->
+</div>
+
+<!-- ══════════════════════════════════════════
+     MAIN HEADER
+══════════════════════════════════════════ -->
+<header class="main-header">
+  <div class="main-header-inner">
+    <a href="#">
+      <img class="site-logo" src="assets/logo1.png" alt="LaGuardia Community College" style="height:40px;">
+    </a>
+    <nav>
+      <ul class="main-nav">
+        <li>
+          <a href="#">Admissions <span class="nav-caret"></span></a>
+          <ul class="submenu">
+            <li><a href="#">Apply Now</a></li>
+            <li><a href="#">Discover LaGuardia</a></li>
+            <li><a href="#">International Applicants</a></li>
+            <li><a href="#">Adult Learner</a></li>
+            <li><a href="#">Non-Degree Students</a></li>
+            <li><a href="#">Visit LaGuardia</a></li>
+            <li><a href="#">After You've Applied</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Academics <span class="nav-caret"></span></a>
+          <ul class="submenu">
+            <li><a href="#">Academic Affairs</a></li>
+            <li><a href="#">Academic Calendar</a></li>
+            <li><a href="#">Majors</a></li>
+            <li><a href="#">Degree Maps</a></li>
+            <li><a href="#">College Catalog</a></li>
+            <li><a href="#">Advising</a></li>
+            <li><a href="#">Transfer Resources</a></li>
+            <li><a href="#">Tutoring</a></li>
+            <li><a href="#">Register for Classes</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Paying for College <span class="nav-caret"></span></a>
+          <ul class="submenu">
+            <li><a href="#">Student Financial Services</a></li>
+            <li><a href="#">Tuition and Fees</a></li>
+            <li><a href="#">Foundation Student Support</a></li>
+            <li><a href="#">Federal Financial Aid (FAFSA)</a></li>
+            <li><a href="#">NYS Tuition Assistance Program</a></li>
+            <li><a href="#">NYS Excelsior Scholarship</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Continuing Education <span class="nav-caret"></span></a>
+          <ul class="submenu">
+            <li><a href="#">Explore Our Services</a></li>
+            <li><a href="#">English Language Learning</a></li>
+            <li><a href="#">Pre-College &amp; High School Equivalency</a></li>
+            <li><a href="#">Career Skills &amp; Workforce Training</a></li>
+            <li><a href="#">Small Business &amp; Entrepreneur Services</a></li>
+            <li><a href="#">Find Courses, Certificates and Programs</a></li>
+            <li><a href="#">Current Catalog</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Students <span class="nav-caret"></span></a>
+          <ul class="submenu">
+            <li><a href="#">Student Affairs</a></li>
+            <li><a href="#">Rebel's Resources</a></li>
+            <li><a href="#">Campus Life</a></li>
+            <li><a href="#">Athletics and Recreation</a></li>
+            <li><a href="#">Peer Programs</a></li>
+            <li><a href="#">Student Events</a></li>
+            <li><a href="#">Wellness Center</a></li>
+            <li><a href="#">Health Center</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">About <span class="nav-caret"></span></a>
+          <ul class="submenu">
+            <li><a href="#">At a Glance</a></li>
+            <li><a href="#">Maps and Directions</a></li>
+            <li><a href="#">Mission &amp; Core Values</a></li>
+            <li><a href="#">President Kenneth Adams</a></li>
+            <li><a href="#">President's Cabinet</a></li>
+            <li><a href="#">Compliance and Diversity</a></li>
+            <li><a href="#">Public Safety</a></li>
+            <li><a href="#">Divisions and Departments</a></li>
+            <li><a href="#">Research and Effectiveness</a></li>
+            <li><a href="#">Strategic Plan 2025–2029</a></li>
+            <li><a href="#">LaGuardia Foundation</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════
+     PAGE WRAP (1140px centered, white bg)
+══════════════════════════════════════════ -->
+
+<!-- GRAY BANNER: title only — full width gray, inner content centered -->
+<div style="background: var(--grey-light); width: 100%;">
+  <div class="page-wrap">
+    <div class="page-banner">
+      <h1>Benefits</h1>
+    </div>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+<!-- ══════════════════════════════════════════
+     PAGE BODY
+══════════════════════════════════════════ -->
+<div class="page-body">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+
+    <div class="sidebar-contact">
+      <h2>Contact Us</h2>
+      <p><strong>Room:</strong> E-Building, E-407</p>
+      <p><strong>Phone:</strong> (718) 482-5075</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <!-- if needed to activate the color
+        <li class="active"><a href="#"><span>Directory</span></a></li>
+      -->
+     
+      <li><a href="Directory.html"><span>Directory</span></a></li>
+      <li><a href="Watercooler.html"><span>Water Cooler</span></a></li>
+      <li>
+        <a href="#">
+          <span>Employment Services</span>
+          <span class="sub-chevron"><i class="fas fa-chevron-right"></i></span>
+        </a>
+        <ul class="sidebar-sub">
+          <li><a href="EmploymentServices/Classified.html">Classified Staff</a></li>
+          <li><a href="EmploymentServices/ECPHEO.html">ECP/HEO</a></li>
+          <li><a href="EmploymentServices/Faculty.html">Faculty/Adjunct/CLT</a></li>
+          <li><a href="EmploymentServices/NTL.html">Non-Tax Levy</a></li>
+        </ul>
+      </li>
+
+      <li class="active"><a href="Benefits.html"><span>Benefits</span></a></li>
+      <li><a href="Recruitment.html"><span>Recruitment</span></a></li>
+      <li><a href="Technology.html"><span>Technology and Data</span></a></li>
+      <li><a href="Training.html"><span>Training and Development</span></a></li>
+
+    </ul>
+
+    <div class="sidebar-ann">
+      <h3>Announcements</h3>
+      <p class="ann-promo">Discounted Movie Tickets, Travel, Hotel and More!</p>
+      <a href="#" class="ann-wa">Explore Working Advantage</a>
+      <p class="ann-code">(<a href="#">Get <span class="pdf-badge">PDF</span></a> the Company Code)</p>
+      <ul>
+        <li><a href="#">Health Plan Coverage, if hired on or after July 1, 2019</a></li>
+        <li><a href="#">Employment Verification (Salary Included)</a> <span class="pdf-badge">PDF</span></li>
+        <li><a href="#">Employment Verification (No Salary Included)</a> <span class="pdf-badge">PDF</span></li>
+        <li><a href="#">Health Plan Rates as of October 2024</a> <span class="pdf-badge">PDF</span></li>
+        <li><a href="#">Adjunct Heath Insurance Rates 2025</a> <span class="pdf-badge">PDF</span></li>
+        <li><a href="#">Health Benefits Program Rate Changes</a> <span class="pdf-badge">PDF</span></li>
+        <li><a href="#">Workplace Violence Prevention Program</a> <span class="pdf-badge">PDF</span></li>
+        <li><a href="#">Personnel Order 2024-01 Campus Security Assistant (04841)</a> <span class="pdf-badge">PDF</span></li>
+        <li><a href="#">Personnel Order 2024-02 Assistant Principal Custodial Supervisor (80560)</a> <span class="pdf-badge">PDF</span></li>
+        <li><a href="#">Personnel Order 2024-03 Fleet Coordinator (04907)</a> <span class="pdf-badge">PDF</span></li>
+      </ul>
+    </div>
+
+  </aside>
+
+  <!-- ── MAIN CONTENT ── -->
+  <main class="main-content">
+
+    <!-- ═══════════════════════════════
+         SECTION: MEET THE TEAM ("The Faces Behind the Emails")
+         Self-contained: classes prefixed "mt-". Delete this block to remove it.
+         Photos: assets/bonnie-brown.png, angel-pasan.png, daniella-lewin.png, ashley-luna-palma.png
+    ═══════════════════════════════ -->
+    <section id="mt-section" style="padding:12px 0 40px; border-bottom:3px double #e0e0e0;">
+      <style>
+        #mt-section .mt-card{display:flex;border:1px solid #e5e5e5;border-radius:10px;overflow:hidden;background:#ffffff}
+        #mt-section .mt-lead{flex:0 0 32%;background:#C4262E;color:#ffffff;padding:28px 24px;display:flex;flex-direction:column}
+        #mt-section .mt-lead-photo{width:120px;height:120px;border-radius:50%;object-fit:cover;align-self:center;border:5px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.3);margin-bottom:12px}
+        #mt-section .mt-lead-name{font-size:20px;font-weight:700;text-align:center;margin:0 0 6px;color:#ffffff}
+        #mt-section .mt-lead-title{font-size:14px;text-align:center;margin:0 0 10px;color:#ffffff}
+        #mt-section .mt-lead-bio{font-size:14px;line-height:1.5;margin:0 0 16px;color:#ffffff}
+        #mt-section .mt-lead a{color:#ffffff;font-size:13px;display:block;margin-bottom:8px}
+        #mt-section .mt-lead a:hover{text-decoration:underline}
+        #mt-section .mt-team{flex:1;padding:28px 32px}
+        #mt-section .mt-team h3{font-family:'Overpass',sans-serif;font-size:22px;font-weight:400;color:#000000;margin:0 0 20px;padding-bottom:20px;border-bottom:1px solid #ebebeb}
+        #mt-section .mt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-top:12px}
+        #mt-section .mt-person{text-align:center}
+        #mt-section .mt-person img{width:72px;height:72px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 14px;background:#F2F2F2}
+        #mt-section .mt-name{font-size:14px;font-weight:700;color:#000000;margin:0 0 6px}
+        #mt-section .mt-role{font-size:14px;color:#C4262E;margin:0 0 8px}
+        #mt-section .mt-person a{font-size:12px;color:#777777;overflow-wrap:anywhere}
+        #mt-section .mt-person a:hover{color:#C4262E;text-decoration:underline}
+        @media (max-width:1000px){ #mt-section .mt-card{flex-direction:column} #mt-section .mt-lead{flex:none} }
+        @media (max-width:600px){ #mt-section .mt-grid{grid-template-columns:1fr} }
+      </style>
+
+      <h2 style="font-family:'Roboto', sans-serif; font-size:20px; font-weight:500; color:#000000; margin-bottom:24px; padding-bottom:10px; border-bottom:2px solid #C4262E; display:inline-block;">The Faces Behind the Emails</h2>
+
+      <div class="mt-card">
+        <div class="mt-lead">
+          <img class="mt-lead-photo" src="assets/bonnie.png" alt="Bonnie Brown">
+          <p class="mt-lead-name">Bonnie Brown</p>
+          <p class="mt-lead-title">Benefits Manager</p>
+          <p class="mt-lead-bio">Bonnie leads the Benefits team with over 15 years of public sector HR experience, committed to making benefits clear and accessible for every LaGuardia employee.</p>
+          <a href="tel:+17184825087">(718) 482-5087</a>
+          <a href="mailto:bbrown@lagcc.cuny.edu">bbrown<wbr>@lagcc.cuny.edu</a>
+        </div>
+        <div class="mt-team">
+          <h3>Meet the Team</h3>
+          <div class="mt-grid">
+            <div class="mt-person">
+              <img src="assets/man.png" alt="Angel Pasan">
+              <p class="mt-name">Angel Pasan</p>
+              <p class="mt-role">Benefits Coordinator</p>
+              <a href="mailto:angel.pasan88@lagcc.cuny.edu">angel.pasan88<wbr>@lagcc.cuny.edu</a>
+            </div>
+            <div class="mt-person">
+              <img src="assets/woman.png" alt="Daniella Lewin">
+              <p class="mt-name">Daniella Lewin</p>
+              <p class="mt-role">Benefits Assistant</p>
+              <a href="mailto:daniella.lewin59@lagcc.cuny.edu">daniella.lewin59<wbr>@lagcc.cuny.edu</a>
+            </div>
+            <div class="mt-person">
+              <img src="assets/woman.png" alt="Ashley Luna Palma">
+              <p class="mt-name">Ashley Luna Palma</p>
+              <p class="mt-role">College Assistant</p>
+              <a href="mailto:ashley.lunapalma71@lagcc.cuny.edu">ashley.lunapalma71<wbr>@lagcc.cuny.edu</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END SECTION: MEET THE TEAM -->
+
+    <!-- ═══════════════════════════════
+         SECTION: ANSWERS BEFORE THE QUESTIONS
+         Self-contained: styles and markup live inside this <section>; classes prefixed "abtq-".
+         To remove: delete everything from this comment to "END SECTION: ANSWERS BEFORE THE QUESTIONS".
+         Update each card's href to the matching page.
+    ═══════════════════════════════ -->
+    <section id="abtq-section" style="padding:40px 0 40px; border-bottom:3px double #e0e0e0;">
+
+      <style>
+        #abtq-section .abtq-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+        #abtq-section .abtq-card{display:block;background:#ffffff;border:1px solid #C4262E;border-top:3px solid #C4262E;padding:28px 24px;min-height:180px;transition:box-shadow .2s, transform .2s}
+        #abtq-section .abtq-card:hover{box-shadow:0 6px 18px rgba(0,0,0,0.08);transform:translateY(-2px)}
+        #abtq-section .abtq-card:focus-visible{outline:2px solid #C4262E;outline-offset:3px}
+        #abtq-section .abtq-title{display:block;font-family:'Roboto',sans-serif;font-size:17px;font-weight:500;color:#000000;margin-bottom:18px}
+        #abtq-section .abtq-card:hover .abtq-title{color:#C4262E}
+        #abtq-section .abtq-desc{display:block;font-family:'Roboto',sans-serif;font-size:15px;line-height:1.5;color:#777777}
+        @media (max-width:1100px){ #abtq-section .abtq-grid{grid-template-columns:repeat(2,1fr)} }
+        @media (max-width:560px){ #abtq-section .abtq-grid{grid-template-columns:1fr} #abtq-section .abtq-card{min-height:0} }
+      </style>
+
+      <h2 style="font-family:'Roboto', sans-serif; font-size:20px; font-weight:500; color:#000000; margin-bottom:12px; padding-bottom:10px; border-bottom:2px solid #C4262E; display:inline-block;">Answers Before the Questions</h2>
+      <p style="font-size:16px; color:#555555; line-height:1.7; margin-bottom:20px;">Need help finding what you are looking for? Start here!</p>
+
+      <div class="abtq-grid">
+        <a href="HealthBenefits_V1.html" class="abtq-card">
+          <span class="abtq-title">Health Benefits</span>
+          <span class="abtq-desc">Get to know the health benefits provided by the City of New York and your union.</span>
+        </a>
+        <a href="Leaves_V1.html" class="abtq-card">
+          <span class="abtq-title">Leaves</span>
+          <span class="abtq-desc">Learn about paid and unpaid leaves.</span>
+        </a>
+        <a href="Retirement_V1.html" class="abtq-card">
+          <span class="abtq-title">Retirement</span>
+          <span class="abtq-desc">Thinking of retiring? Start here!</span>
+        </a>
+        <a href="Voluntary_V1.html" class="abtq-card">
+          <span class="abtq-title">Voluntary Benefits</span>
+          <span class="abtq-desc">Learn about more benefits provided by the City of New York.</span>
+        </a>
+      </div>
+
+    </section>
+    <!-- END SECTION: ANSWERS BEFORE THE QUESTIONS -->
+
+    <!-- ═══════════════════════════════
+         SECTION: BENEFITS UPDATES & EVENTS ("Don't Miss This!")
+         Self-contained: classes prefixed "bu-". Delete this block to remove it.
+         To update: edit the announcement and event items below. The × button collapses the panel.
+    ═══════════════════════════════ -->
+    <section id="bu-section" style="padding:40px 0; border-bottom:3px double #e0e0e0;">
+      <style>
+        #bu-section .bu-panel{border:1px solid #e0e0e0;border-radius:10px;overflow:hidden;background:#F2F2F2}
+        #bu-section .bu-head{display:flex;align-items:center;justify-content:space-between;background:#C4262E;padding:22px 28px}
+        #bu-section .bu-head h3{font-size:20px;font-weight:500;color:#ffffff;margin:0}
+        #bu-section .bu-toggle{background:none;border:none;color:#ffffff;font-size:24px;line-height:1;cursor:pointer;opacity:.8;padding:0 4px;transition:transform .2s}
+        #bu-section .bu-toggle:hover{opacity:1}
+        #bu-section .bu-toggle:focus-visible{outline:2px solid #ffffff;outline-offset:2px}
+        #bu-section .bu-panel.is-collapsed .bu-body{display:none}
+        #bu-section .bu-panel.is-collapsed .bu-toggle{transform:rotate(45deg)}
+        #bu-section .bu-body{padding:20px}
+        #bu-section .bu-box{background:#ffffff;border-radius:6px;padding:22px 26px 6px;margin-bottom:12px}
+        #bu-section .bu-box:last-child{margin-bottom:0}
+        #bu-section .bu-label{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C4262E;margin:0 0 14px}
+        #bu-section .bu-item{padding:14px 0;border-top:1px solid #ebebeb}
+        #bu-section .bu-label + .bu-item{border-top:none;padding-top:4px}
+        #bu-section .bu-title{font-size:16px;font-weight:500;color:#000000;margin:0 0 6px}
+        #bu-section .bu-date{font-size:13px;font-weight:400;color:#aaaaaa}
+        #bu-section .bu-desc{font-size:14px;color:#777777;margin:0}
+        #bu-section .bu-event{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+        #bu-section .bu-when{font-size:14px;font-weight:600;color:#C4262E;white-space:nowrap}
+      </style>
+
+      <h2 style="font-family:'Roboto', sans-serif; font-size:20px; font-weight:500; color:#000000; margin-bottom:24px; padding-bottom:10px; border-bottom:2px solid #C4262E; display:inline-block;">Don&rsquo;t Miss This!</h2>
+
+      <div class="bu-panel">
+        <div class="bu-head">
+          <h3>Benefits Updates &amp; Events</h3>
+          <button type="button" class="bu-toggle" aria-expanded="true" aria-label="Collapse Benefits Updates and Events">&times;</button>
+        </div>
+        <div class="bu-body">
+          <div class="bu-box">
+            <p class="bu-label">Announcements</p>
+            <div class="bu-item">
+              <p class="bu-title">Open Enrollment Opens Nov 1 - Nov 30 <span class="bu-date">&middot; Nov 1</span></p>
+              <p class="bu-desc">Submit selections before midnight to avoid gaps in coverage.</p>
+            </div>
+            <div class="bu-item">
+              <p class="bu-title">New Health Plan Rates as of July 2026 <span class="bu-date">&middot; July 1</span></p>
+              <p class="bu-desc">These rates are effective July 1, 2026 and will be reflected as of your first full payroll period in July 2026</p>
+            </div>
+            <div class="bu-item">
+              <p class="bu-title">Health Benefits Program Rate Changes <span class="bu-date">&middot; July 1</span></p>
+              <p class="bu-desc">New York City Office of Labor Relations Health Benefits Program Memo</p>
+            </div>
+          </div>
+          <div class="bu-box">
+            <p class="bu-label">Upcoming Events</p>
+            <div class="bu-item bu-event">
+              <div><p class="bu-title">Wellness Wednesday</p><p class="bu-desc">9:00 AM &ndash; 12:00 PM &middot; Room E-407</p></div>
+              <span class="bu-when">Mar 12</span>
+            </div>
+            <div class="bu-item bu-event">
+              <div><p class="bu-title">Benefits Info Session</p><p class="bu-desc">2:00 PM &ndash; 3:30 PM &middot; Zoom</p></div>
+              <span class="bu-when">Mar 19</span>
+            </div>
+            <div class="bu-item bu-event">
+              <div><p class="bu-title">Benefits Fair 2026</p><p class="bu-desc">10:00 AM &ndash; 12:00 PM &middot; E-Building Atrium</p></div>
+              <span class="bu-when">Oct 14</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+      (function () {
+        var root = document.getElementById('bu-section'); if (!root) return;
+        var panel = root.querySelector('.bu-panel'), btn = root.querySelector('.bu-toggle');
+        btn.addEventListener('click', function () {
+          var collapsed = panel.classList.toggle('is-collapsed');
+          btn.setAttribute('aria-expanded', !collapsed);
+          btn.setAttribute('aria-label', (collapsed ? 'Expand' : 'Collapse') + ' Benefits Updates and Events');
+        });
+      })();
+      </script>
+    </section>
+    <!-- END SECTION: BENEFITS UPDATES & EVENTS -->
+
+    <!-- ═══════════════════════════════
+         SECTION: PHOTO FUN ("100% HR Approved")
+         Self-contained: classes prefixed "pf-". Delete this block to remove it.
+         Photo: assets/photo-fun.jpg
+    ═══════════════════════════════ -->
+    <section id="pf-section" style="padding:40px 0 20px;">
+      <style>
+        #pf-section .pf-card{border:1px solid #CCCCCC;border-radius:10px;background:#F2F2F2;padding:14px;overflow:hidden}
+        #pf-section .pf-title{display:inline-block;font-size:15px;font-weight:500;color:#000000;margin:0 0 12px;padding-bottom:6px;border-bottom:2px solid #000000}
+        #pf-section .pf-card img{display:block;width:100%;height:auto;border-radius:6px}
+      </style>
+
+      <h2 style="font-family:'Roboto', sans-serif; font-size:20px; font-weight:500; color:#000000; margin-bottom:24px; padding-bottom:10px; border-bottom:2px solid #C4262E; display:inline-block;">100% HR Approved</h2>
+
+      <div class="pf-card">
+        <p class="pf-title">Photo Fun</p>
+        <img src="assets/benefitsfair.jpg" alt="The HR team together at a college event">
+      </div>
+    </section>
+    <!-- END SECTION: PHOTO FUN -->
+
+  </main>
+</div><!-- /page-body -->
+</div><!-- /page-wrap -->
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="footer-inner-wrap">
+  <div class="footer-inner">
+
+    <!-- Contact Us -->
+    <div>
+      <p class="footer-col-heading">Contact Us</p>
+      <ul class="f-icon-list">
+        <li>
+          <svg class="f-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.14 1.16 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.9.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <span>To contact us, call (718) 482-7200</span>
+        </li>
+        <li>
+          <svg class="f-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <a href="#">CUNY LaGuardia Community College<br>31-10 Thomson Avenue<br>Long Island City, NY 11101 USA</a>
+        </li>
+      </ul>
+      <div class="f-map-link"><a href="#">Map and Directions</a></div>
+    </div>
+
+    <!-- Quicklinks -->
+    <div>
+      <p class="footer-col-heading">Quicklinks</p>
+      <ul class="f-links">
+        <li><a href="#">Apply Now</a></li>
+        <li><a href="#">Compliance and Diversity</a></li>
+        <li><a href="#">Emergency Information</a></li>
+        <li><a href="#">Employment Opportunities</a></li>
+        <li><a href="#">Faculty and Staff Email</a></li>
+        <li><a href="#">Website Feedback</a></li>
+      </ul>
+    </div>
+
+    <!-- Follow Us -->
+    <div>
+      <p class="footer-col-heading">Follow Us</p>
+      <div class="f-social">
+        <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#fff"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="#" aria-label="Flickr"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="7" cy="12" r="4"/><circle cx="17" cy="12" r="4"/></svg></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>2026 © Copyright. All Rights Reserved</p>
+    <ul class="footer-bottom-links">
+      <li><a href="#">Security</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Policies &amp; Governance</a></li>
+      <li><a href="#">Equal Opportunity and Non-Discrimination</a></li>
+      <li><a href="#">Get Acrobat Reader</a></li>
+    </ul>
+    <div class="footer-cuny">
+      <img src="https://www.laguardia.edu/wp-content/uploads/elementor/thumbs/CUNY-White-Logo@0.1x-pxidlnwa8q6hjhux3ox9f1ljr7ccn19u4sbmirf24w.png" alt="CUNY">
+    </div>
+  </div><!-- /footer-bottom -->
+  </div><!-- /footer-inner-wrap -->
+</footer>
+
+<script>
+  function toggleAcc(titleEl) {
+    titleEl.closest('.acc-item').classList.toggle('is-open');
+  }
+  function toggleDept(id) {
+    document.getElementById(id).classList.toggle('is-open');
+  }
+</script>
+</body>
+</html>
